@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $.ajax({
+            url:'api/check-login.php',
+            type:'post',
+            data:{
+                hello:10
+            },
+            success:function(response){
+                if(!response){
+                    window.location.href = "land.html";
+                    return;
+                }else{
+                    
+                }
+            }
+        })
+    </script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+
+    <style>
+        body{
+            background-color: #fff;
+            margin: 0px;
+        }
+
+        .poppins-regular {
+            font-family: "Poppins", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .container{
+            padding: 0px;
+            color: black;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 0.1px solid #ddd;
+            margin-bottom: 0px;
+        }
+
+        .name-container{
+            margin-right: auto;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .status{
+            font-weight: normal;
+            font-size: small;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .log-out{
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        .user-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 40px);
+            margin: 10px 20px;
+        }
+
+        .user-text{
+            margin-left: auto;
+            background-color: #f86621;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 15px;
+            border-bottom-right-radius: 0px;
+            box-shadow: 0px 0px 2px #ddd;
+        }
+
+        .response-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 40px - 80px);
+            margin: 10px 20px;
+        }
+
+        .response-text{
+            margin-right: auto;
+            background-color: #eae8e7;
+            padding: 15px 20px;
+            border-radius: 15px;
+            border-bottom-left-radius: 0px;
+            box-shadow: 0px 0px 2px #ddd;
+            color: #4f4f4f;
+            font-size: 15px;
+        }
+
+        .prompt-box-container{
+            position: fixed;
+            bottom: 0;
+            border-top: 0.1px solid #ddd;
+            width: calc(100%);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .prompt-input{
+            margin-right: auto;
+            padding: 10px 20px;
+            font-size: medium;
+            background-color: #eae8e7;
+            border-radius: 15px;
+            margin: 15px 10px 15px 20px;
+            outline: none;
+            border: 0.1px solid #eae8e7;
+            width: calc(100% - 40px - 30px);
+        }
+
+        .send-btn{
+            color: #6e6d6c;
+            padding: 15px 15px;
+            background-color: #eae8e7;
+            border-radius: 15px;
+            margin: 15px 20px 15px 0px;
+        }
+
+        .empty{
+            width: 80px;
+        }
+
+        .text-container-main{
+            height: calc(100vh - 84.4px - 75.7px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container poppins-regular">
+
+        <div class="header">
+            <div class="name-container">
+                <div class="name">
+                    Aaryan
+                </div>
+                <div class="status">Online</div>
+            </div>
+            <div class="log-out material-symbols-rounded">close</div>
+        </div>
+
+        <div class="text-container-main">
+            <div class="user-container">
+                <div class="empty"></div>
+                <div class="user-text">Hello! what are you doin? is okay</div>
+            </div>
+    
+            <div class="response-container">
+                <div class="response-text">Hey. What are you doing? what is happening in life?</div>
+            </div>
+        </div>
+
+        <div class="prompt-box-container">
+            <input type="text" name="" id="" class="prompt-input poppins-regular" placeholder="Message">
+            <div class="send-btn material-symbols-rounded">send</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
